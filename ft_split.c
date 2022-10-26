@@ -6,11 +6,11 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:15:52 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/24 15:37:53 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/10/25 21:38:34 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "libft.h"
 
 static int	ft_count_word(char const *s, char c)
 {
@@ -71,7 +71,7 @@ char		**ft_split(char const *s, char c)
 		while (s[i] == c)
 			i++;
 		size = ft_size_word(s, c, i);
-		if (!(strs[j] = ft_substr(s, i, size)))
+		if (!(strs[j] == ft_substr(s, i, size)))
 		{
 			ft_free(strs, j);
 			return (NULL);
@@ -82,8 +82,9 @@ char		**ft_split(char const *s, char c)
 	return (strs);
 }
 
-// int main ()
-// {
-//     char **s=ft_split("imad ou aymane", ' ');
-//     printf("%s\n%s\n%s\n",s[0],s[1],s[2]);
-// }
+ int main ()
+ {
+	char str[100] ="hello word";
+     char **s=ft_split(str, 'i');
+     printf("%s\n%s\n%s\n",s[0],s[1],s[2]);
+ }

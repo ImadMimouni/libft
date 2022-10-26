@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:45:24 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/24 19:22:23 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/10/25 16:35:58 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,4 @@ char		*ft_itoa(int n)
 	ft_result(size, offset, n, res);
 	res[size] = '\0';
 	return (res);
-}
-
-
-int		main(void)
-{
-	printf("%s\n", ft_itoa(-10050003));
-
 }
