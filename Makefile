@@ -1,4 +1,4 @@
-Library = libft.a
+Library = libft
 
 files 	   = ft_strlen \
 			 ft_memmove \
@@ -37,7 +37,7 @@ files 	   = ft_strlen \
 
 Compiler	= gcc
 
-CmpFlags	= -Wall -Wextra -Werror
+Flags	= -Wall -Wextra -Werror
 
 OUTN	= $(Library).a
 
@@ -48,7 +48,7 @@ OFILES	= $(files:%=%.o)
 NAME	= $(OUTN)
 
 $(NAME):
-	$(Compiler) $(CmpFlags) -c $(CFILES) -I./
+	$(Compiler) $(Flags) -c $(CFILES) -I./
 	ar -rc $(OUTN) $(OFILES)
 
 all: $(NAME)

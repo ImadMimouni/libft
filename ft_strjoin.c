@@ -6,23 +6,11 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:30:36 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/24 10:30:37 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/10/27 22:27:22 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_strlen(const char *s)
-{
-	int len;
-
-	len = 0;
-	if (!s)
-		return (len);
-	while (s[len] != '\0')
-		len++;
-	return (len);
-}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
