@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 16:50:11 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/25 19:49:48 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/10/28 21:57:37 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!s || !f)
 		return (NULL);
 	len = ft_strlen(s);
-	if (!(result = malloc(sizeof(char) * (len + 1))))
+	result = malloc(sizeof(char) * (len + 1));
+	if (!result)
 		return (NULL);
 	i = 0;
 	while (s[i])

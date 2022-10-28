@@ -6,13 +6,13 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 16:18:33 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/22 17:10:35 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/10/28 22:08:51 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *str1, const void *str2, size_t n)
+int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
 	size_t	i;
 

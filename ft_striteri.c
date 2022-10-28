@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 19:50:03 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/25 19:50:53 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/10/28 22:02:45 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned int i;
+	unsigned int	i;
 
 	if (!s || !f)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:57:12 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/24 12:27:37 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/10/28 23:29:30 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strchr(const char *str, int c)
 
 size_t	ft_strlen(const char *s)
 {
-	size_t len;
+	size_t	len;
 
 	len = 0;
 	if (!s)
@@ -37,13 +37,13 @@ size_t	ft_strlen(const char *s)
 	return (len);
 }
 
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	size_t	j;
 	char	*str;
 
-	str = (char*)malloc(sizeof(*s) * (len + 1));
+	str = (char *)malloc(sizeof(*s) * (len + 1));
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -73,11 +73,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_of_suffix = ft_strlen(s1);
 	while (size_of_suffix && ft_strchr(set, s1[size_of_suffix]))
 		size_of_suffix--;
-	trimmed = ft_substr((char*)s1, 0, size_of_suffix + 1);
+	trimmed = ft_substr((char *)s1, 0, size_of_suffix + 1);
 	return (trimmed);
 }
-// int main()
-// {
-// 	printf("%s\n", ft_strtrim("acbqabac", "abc"));
-// 	return 0;
-// }

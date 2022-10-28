@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 22:17:50 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/26 22:50:18 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/10/28 22:05:39 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,4 @@ void	ft_putnbr_fd(int n, int fd)
 		number %= 10;
 	}
 	ft_putchar_fd(number + '0', fd);
-}
-
-int main ()
-{
-    ft_putnbr_fd(87,1);
 }

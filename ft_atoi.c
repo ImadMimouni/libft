@@ -6,34 +6,35 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 18:01:43 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/22 18:02:59 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/10/28 21:24:08 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int		sign;
-	int		result;
-	int		i;
+	int	sign;
+	int	nbr;
+	int	i;
 
-	result = 0;
 	sign = 1;
+	nbr = 0;
 	i = 0;
-	while (str[i] && (str[i] == '\f' || str[i] == '\t' || str[i] == ' ' ||
-			str[i] == '\n' || str[i] == '\r' || str[i] == '\v'))
+	while ((str[i] == '\t') || (str[i] == ' ')
+		|| (str[i] == '\v') || (str[i] == '\f')
+		|| (str[i] == '\r') || (str[i] == '\n'))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[i++] == '-')
-			sign = -1;
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
 	}
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		result *= 10;
-		result += str[i++] - '0';
+		nbr = nbr * 10 + str[i] - '0';
+		i++;
 	}
-	result *= sign;
-	return (result);
+	return (sign * nbr);
 }
