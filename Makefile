@@ -6,11 +6,11 @@
 #    By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/28 20:48:26 by imimouni          #+#    #+#              #
-#    Updated: 2022/10/28 20:48:27 by imimouni         ###   ########.fr        #
+#    Updated: 2022/10/29 21:30:16 by imimouni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+CC = cc
 
 FLAGS = -Wall -Wextra -Werror
 

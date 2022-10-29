@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 03:35:50 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/22 09:28:11 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/10/29 22:39:18 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,17 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	char	*pt_dest;
-	char	*pt_src;
+	char			*str_dest;
+	char			*str_src;
 
-	i = 0;
-	pt_dest = (char *)dest;
-	pt_src = (char *)src;
-	if (pt_src > pt_dest)
+	str_dest = (char *)dest;
+	str_src = (char *)src;
+	if (str_dest > str_src)
 	{
-		while (i < n)
-		{
-			pt_dest[i] = pt_src[i];
-			i++;
-		}
+		while (n--)
+			str_dest[n] = str_src[n];
 	}
-	else
-	{
-		while (i != n)
-		{
-			pt_dest[n - i - 1] = pt_src[n - i - 1];
-			i++;
-		}
-	}
+	else if (str_dest < str_src)
+		ft_memcpy(dest, src, n);
 	return (dest);
 }

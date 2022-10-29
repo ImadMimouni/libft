@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:29:05 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/28 21:58:38 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/10/29 22:38:03 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	len;
+	size_t			i;
 
-	len = 0;
-	if (!s)
-		return (len);
-	while (s[len] != '\0')
-		len++;
-	return (len);
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }

@@ -6,35 +6,35 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 18:01:43 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/28 21:24:08 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/10/29 22:21:34 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
-	int	sign;
-	int	nbr;
-	int	i;
+	long	num;
+	int		sign;
+	int		i;
 
-	sign = 1;
-	nbr = 0;
 	i = 0;
-	while ((str[i] == '\t') || (str[i] == ' ')
-		|| (str[i] == '\v') || (str[i] == '\f')
-		|| (str[i] == '\r') || (str[i] == '\n'))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	sign = 1;
+	num = 0;
+	while ((nptr[i] >= '\t' && nptr[i] <= '\r') || nptr[i] == ' ')
+		nptr++;
+	if (nptr[i] == '-')
+		sign = sign * -1;
+	if (nptr[i] == '+' || nptr[i] == '-')
+		nptr++;
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
+		num = (num * 10) + nptr[i] - '0';
+		nptr++;
+		if (num * sign > 2147483647)
+			return (-1);
+		if (num * sign < -2147483648)
+			return (0);
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nbr = nbr * 10 + str[i] - '0';
-		i++;
-	}
-	return (sign * nbr);
+	return (num * sign);
 }
