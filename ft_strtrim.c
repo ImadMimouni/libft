@@ -12,55 +12,6 @@
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
-{
-	while (*str != '\0')
-	{
-		if ((unsigned char)*str == (unsigned char)c)
-			return ((char *)str);
-		str++;
-	}
-	if (c == 0)
-		return ((char *)str);
-	return (NULL);
-}
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	len;
-
-	len = 0;
-	if (!s)
-		return (len);
-	while (s[len] != '\0')
-		len++;
-	return (len);
-}
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	size_t	i;
-	size_t	j;
-	char	*str;
-
-	str = (char *)malloc(sizeof(*s) * (len + 1));
-	if (!str)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (s[i])
-	{
-		if (i >= start && j < len)
-		{
-			str[j] = s[i];
-			j++;
-		}
-		i++;
-	}
-	str[j] = 0;
-	return (str);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t		size_of_suffix;
