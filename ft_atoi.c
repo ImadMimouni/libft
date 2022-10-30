@@ -6,13 +6,13 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 18:01:43 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/29 22:21:34 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/10/30 10:39:13 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *str)
 {
 	long	num;
 	int		sign;
@@ -21,16 +21,16 @@ int	ft_atoi(const char *nptr)
 	i = 0;
 	sign = 1;
 	num = 0;
-	while ((nptr[i] >= '\t' && nptr[i] <= '\r') || nptr[i] == ' ')
-		nptr++;
-	if (nptr[i] == '-')
+	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
+		str++;
+	if (str[i] == '-')
 		sign = sign * -1;
-	if (nptr[i] == '+' || nptr[i] == '-')
-		nptr++;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	if (str[i] == '+' || str[i] == '-')
+		str++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		num = (num * 10) + nptr[i] - '0';
-		nptr++;
+		num = (num * 10) + str[i] - '0';
+		str++;
 		if (num * sign > 2147483647)
 			return (-1);
 		if (num * sign < -2147483648)

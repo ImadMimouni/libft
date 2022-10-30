@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:45:24 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/28 22:15:02 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/10/30 11:08:06 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,13 +82,13 @@ static char	*reverse_string(char *str, int len)
 char	*ft_itoa(int n)
 {
 	int		count;
-	int		index;
+	int		ind;
 	int		i;
 	char	*str;
 
 	if (n == -2147483648)
 		return (reverse_string(min_itoa(), 10));
-	index = 0;
+	ind = 0;
 	count = alloc_counter(n) + 1;
 	i = n;
 	str = (char *)malloc(sizeof(char) * count);
@@ -96,14 +96,14 @@ char	*ft_itoa(int n)
 		return (NULL);
 	while (n)
 	{
-		str[index] = (val_abs(n) % 10) + 48;
+		str[ind] = (val_abs(n) % 10) + 48;
 		n = n / 10;
-		index++;
+		ind++;
 	}
 	if (!i)
-		str[index++] = '0';
+		str[ind++] = '0';
 	if (i < 0)
-		str[index++] = '-';
-	str[index] = '\0';
+		str[ind++] = '-';
+	str[ind] = '\0';
 	return (reverse_string(str, count - 2));
 }

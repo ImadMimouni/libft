@@ -6,11 +6,10 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:29:30 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/28 22:04:02 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/10/30 12:19:25 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strdup(const char *s)
