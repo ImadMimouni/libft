@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:15:52 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/28 22:04:19 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/11/13 18:32:28 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,20 +46,20 @@ static int	words_lenght(char const *s, char c)
 static char	**ft_free(int i, char **str)
 {
 	i--;
-	while (i >= 0)
+	while (--i >= 0)
 		free(str[i--]);
 	free (str);
-	return (str);
+	return (NULL);
 }
 
-static char	**ft_fill(char const *s, int words, char c, char **spl_words)
+static char	**ft_fill(char const *s, int countwords, char c, char **spl_words)
 {
 	int		i;
 	int		j;
 	int		lenght;
 
 	i = 0;
-	while (i < words)
+	while (i < countwords)
 	{
 		while (*s == c)
 			s++;
@@ -80,14 +80,14 @@ static char	**ft_fill(char const *s, int words, char c, char **spl_words)
 char	**ft_split(char	const *s, char c)
 {
 	char	**spl_words;
-	int		words;
+	int		countwords;
 
 	if (!s)
 		return (NULL);
-	words = count_words(s, c);
-	spl_words = (char **)malloc(sizeof(char *) * (words + 1));
-	if (spl_words == NULL)
+	countwords = count_words(s, c);
+	spl_words = (char **)malloc(sizeof(char *) * (countwords + 1));
+	if (!spl_words)
 		return (NULL);
-	spl_words = ft_fill(s, words, c, spl_words);
+	spl_words = ft_fill(s, countwords, c, spl_words);
 	return (spl_words);
 }
