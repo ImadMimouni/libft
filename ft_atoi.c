@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 18:01:43 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/30 10:39:13 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/11/12 10:25:10 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	num = 0;
 	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
-		str++;
+		i++;
 	if (str[i] == '-')
 		sign = sign * -1;
 	if (str[i] == '+' || str[i] == '-')
-		str++;
+		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		num = (num * 10) + str[i] - '0';
-		str++;
+		i++;
 		if (num * sign > 2147483647)
 			return (-1);
 		if (num * sign < -2147483648)

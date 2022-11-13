@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 02:26:59 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/22 09:47:38 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/11/12 10:32:19 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-	char	*string;
-
-	string = (char *)s;
-	i = 0;
-	while (i < n)
-	{
-		string[i] = 0;
-		i++;
-	}
+	ft_memset(s, 0, n);
 }

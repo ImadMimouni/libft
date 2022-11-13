@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:45:24 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/30 11:08:06 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/11/12 17:08:14 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static char	*min_itoa(void)
 	return (str);
 }
 
-static int	alloc_counter(int n)
+static int	counter(int n)
 {
 	int	i;
 
@@ -60,23 +60,23 @@ static int	alloc_counter(int n)
 	return (i);
 }
 
-static char	*reverse_string(char *str, int len)
+static char	*ft_reverse(char *s)
 {
-	char	swap;
-	int		limit;
 	int		i;
+	int		j;
+	char	c;
 
 	i = 0;
-	limit = (len / 2);
-	while (i <= limit)
+	j = ft_strlen(s) - 1;
+	while (i < j)
 	{
-		swap = str[i];
-		str[i] = str[len];
-		str[len] = swap;
+		c = s[i];
+		s[i] = s[j];
+		s[j] = c;
 		i++;
-		len--;
+		j--;
 	}
-	return (str);
+	return (s);
 }
 
 char	*ft_itoa(int n)
@@ -87,9 +87,9 @@ char	*ft_itoa(int n)
 	char	*str;
 
 	if (n == -2147483648)
-		return (reverse_string(min_itoa(), 10));
+		return (ft_reverse(min_itoa()));
 	ind = 0;
-	count = alloc_counter(n) + 1;
+	count = counter(n) + 1;
 	i = n;
 	str = (char *)malloc(sizeof(char) * count);
 	if (!str)
@@ -100,10 +100,8 @@ char	*ft_itoa(int n)
 		n = n / 10;
 		ind++;
 	}
-	if (!i)
-		str[ind++] = '0';
 	if (i < 0)
 		str[ind++] = '-';
 	str[ind] = '\0';
-	return (reverse_string(str, count - 2));
+	return (ft_reverse(str));
 }
