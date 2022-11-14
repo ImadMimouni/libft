@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 09:29:19 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/22 09:46:46 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/11/14 18:49:55 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 
 	i = 0;
-	if (dstsize == 0)
-	{
-		while (src[i])
-			i++;
-		return (i);
-	}
-	while (i < dstsize - 1 && src[i] != '\0')
+	if (dstsize <= 0)
+		ft_strlen(src);
+	while (src[i] && i < dstsize - 1)
 	{
 		dst[i] = src[i];
 		i++;
 	}
-	if (i < dstsize)
-		dst[i] = '\0';
-	while (src[i] != '\0')
-		i++;
-	return (i);
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }

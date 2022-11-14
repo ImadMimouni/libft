@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 22:00:54 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/30 13:11:00 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/11/14 16:00:59 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,20 @@ char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*str;
 	int		size;
-	int		indice;
+	int		i;
 
-	indice = 0;
 	if (!s1 || !s2)
 		return (NULL);
 	size = ft_strlen(s1) + ft_strlen(s2);
 	str = (char *)malloc(sizeof(char) * (size + 1));
 	if (!str)
 		return (NULL);
-	while (s1[indice])
-	{
-		str[indice] = s1[indice];
-		indice++;
-	}
-	indice = 0;
-	while (s2[indice])
-	{
-		str[ft_strlen(s1) + indice] = s2[indice];
-		indice++;
-	}
+	i = -1;
+	while (s1[++i])
+		str[i] = s1[i];
+	i = -1;
+	while (s2[++i])
+		str[ft_strlen(s1) + i] = s2[i];
 	str[size] = '\0';
 	return (str);
 }
