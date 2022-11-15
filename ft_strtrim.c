@@ -6,24 +6,51 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:57:12 by imimouni          #+#    #+#             */
-/*   Updated: 2022/10/28 23:29:30 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/11/15 11:43:20 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	check_set(char c, char *set)
+{
+	while (*set)
+	{
+		if (*set == c)
+			return (1);
+		set++;
+	}
+	return (0);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t		size_of_suffix;
-	char		*trimmed;
+	int		i;
+	char	*res;
 
-	if (!s1 || !set)
-		return (NULL);
-	while (*s1 && ft_strchr(set, *s1))
-		s1++;
-	size_of_suffix = ft_strlen(s1);
-	while (size_of_suffix && ft_strchr(set, s1[size_of_suffix]))
-		size_of_suffix--;
-	trimmed = ft_substr((char *)s1, 0, size_of_suffix + 1);
-	return (trimmed);
+	if (s1 != 0 && set != 0)
+	{
+		while (*s1 && check_set(*s1, (char *)set))
+			s1++;
+		i = ft_strlen(s1);
+		while (*s1 && check_set(*(s1 + i - 1), (char *)set))
+			i--;
+		res = (char *) malloc(sizeof(char) * (i + 1));
+		if (res)
+		{
+			while (--i >= 0)
+				*(res + i) = *(char *)(s1 + i);
+			*(res + i) = '\0';
+			return (res);
+		}
+	}
+	return (NULL);
 }
+
+// int main ()
+// {
+// 	char s[20] = "1323admin122133";
+// 	char *ss;
+// 	ss = ft_strtrim(s, "123");
+// 	puts(ss);
+// }
