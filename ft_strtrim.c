@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:57:12 by imimouni          #+#    #+#             */
-/*   Updated: 2022/11/15 16:49:57 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/11/15 19:58:00 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	char	*res;
 
-	if (*s1 && *set)
+	if (s1 && set)
 	{
 		while (*s1 && check_set(*s1, (char *)set))
 			s1++;
