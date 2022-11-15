@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:57:12 by imimouni          #+#    #+#             */
-/*   Updated: 2022/11/15 11:43:20 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/11/15 16:49:57 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	char	*res;
 
-	if (s1 != 0 && set != 0)
+	if (*s1 && *set)
 	{
 		while (*s1 && check_set(*s1, (char *)set))
 			s1++;
@@ -38,9 +38,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		res = (char *) malloc(sizeof(char) * (i + 1));
 		if (res)
 		{
+			res[i] = '\0';
 			while (--i >= 0)
-				*(res + i) = *(char *)(s1 + i);
-			*(res + i) = '\0';
+				res[i] = s1[i];
 			return (res);
 		}
 	}
