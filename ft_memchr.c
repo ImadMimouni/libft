@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 15:30:04 by imimouni          #+#    #+#             */
-/*   Updated: 2022/11/12 18:30:34 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/11/16 11:53:18 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,15 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+
+// int main()
+// {
+//     char  s[20] = "ABFDEF";
+//     char c = 'D';
+//     int  n = 6;
+//     char    *ss;
+
+//     ss = ft_memchr(s, c, n);
+//     printf("%s\n", ss);
+//     return (0);
+// }

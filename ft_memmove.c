@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 03:35:50 by imimouni          #+#    #+#             */
-/*   Updated: 2022/11/13 11:30:28 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/11/16 11:58:02 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char			*str_dest;
-	char			*str_src;
+	char	*str_dest;
+	char	*str_src;
 
 	str_dest = (char *)dest;
 	str_src = (char *)src;
@@ -28,3 +28,12 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		ft_memcpy(dest, src, n);
 	return (dest);
 }
+
+// int main(void)
+// {
+// 	char str1[50];
+// 	char str2[50] = "imad mim";
+// 	ft_memmove(str1, str2, 11);
+// 	printf("%s", str1);
+// 	return (0);
+// }

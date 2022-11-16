@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 09:51:05 by imimouni          #+#    #+#             */
-/*   Updated: 2022/11/16 11:19:41 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/11/16 12:13:08 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 // int main()
 // {
-// 	char s1[10] = "ouhammi";
+// 	char s1[10] = "imad";
 // 	char s2[10]= "zero";
-// 	char s3[10] = "ouhammi";
+// 	char s3[10] = "imad";
 // 	char s4[10] = "zero";
 // 	printf("%zu \n", strlcat(s1, NULL, 0));
 // // 	printf("s2 =%s\n",s1);

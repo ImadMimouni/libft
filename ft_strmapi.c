@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 16:50:11 by imimouni          #+#    #+#             */
-/*   Updated: 2022/11/16 11:40:16 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/11/16 12:14:17 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (result);
 }
 
-// char my_func(unsigned int i, char str)
+// char ft_f(unsigned int i, char str)
 // {
 // 	return (str - 32);
 // }
@@ -39,7 +39,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 // 	char str[10] = "imad";
 // 	printf("%s\n", str);
 // 	char *ss;
-// 	ss = ft_strmapi(str, my_func);
+// 	ss = ft_strmapi(str, ft_f);
 // 	printf("%s\n", ss);
 // 	return 0;
 // }
