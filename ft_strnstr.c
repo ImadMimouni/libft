@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 17:14:47 by imimouni          #+#    #+#             */
-/*   Updated: 2022/11/15 10:19:21 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/11/16 11:20:49 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	j;
 
 	i = 0;
+	if (!haystack && len == 0)
+		return NULL;
 	if (*needle == '\0')
 		return ((char *)haystack);
 	while (haystack[i] && i < len)
