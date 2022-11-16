@@ -6,22 +6,22 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:57:31 by imimouni          #+#    #+#             */
-/*   Updated: 2022/11/16 10:46:37 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/11/16 11:42:51 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char *ff(char	*str)
-	{
-		char *strs;
-		
-		strs = (char	*)str;
-		strs = (char *) malloc(sizeof(char));
-		strs[0] = '\0';
-		return (strs);
-	}
-	
+static char	*ff(char *str)
+{
+	char	*strs;
+
+	strs = (char *)str;
+	strs = (char *) malloc(sizeof(char));
+	strs[0] = '\0';
+	return (strs);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
