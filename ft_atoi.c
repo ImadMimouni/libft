@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 18:01:43 by imimouni          #+#    #+#             */
-/*   Updated: 2022/11/12 10:25:10 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/11/18 15:12:38 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,6 @@ int	ft_atoi(const char *str)
 	{
 		num = (num * 10) + str[i] - '0';
 		i++;
-		if (num * sign > 2147483647)
-			return (-1);
-		if (num * sign < -2147483648)
-			return (0);
 	}
 	return (num * sign);
 }
