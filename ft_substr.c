@@ -6,7 +6,7 @@
 /*   By: imimouni <imimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:57:31 by imimouni          #+#    #+#             */
-/*   Updated: 2022/11/16 16:12:55 by imimouni         ###   ########.fr       */
+/*   Updated: 2022/11/18 11:31:17 by imimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		if (start >= ft_strlen(s))
 			return (ft_strdup(""));
-		if (len > ft_strlen(s))
-			len = ft_strlen(s);
 		if (ft_strlen(s) <= start + len)
 			len = ft_strlen(s) - start;
 		str = (char *) malloc(sizeof(char) * (len + 1));
